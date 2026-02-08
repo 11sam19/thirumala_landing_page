@@ -1,0 +1,76 @@
+/* All section css */
+
+@import url('./css/header-section.css');
+@import url('./css/hero.css');
+@import url('./css/stats.css');
+@import url('./css/about.css');
+@import url('./css/clients.css');
+@import url('./css/capabilities.css');
+@import url('./css/testimonials.css');
+@import url('./css/quote-form.css');
+@import url('./css/faq.css');
+@import url('./css/bottom-cta.css');
+@import url('./css/footer.css');
+
+:root {
+  --primary-orange: #fe5200;
+  --text-dark: #2e2e2e;
+  --text-light: #ffffff;
+  --bg-dark: #000000;
+  --bg-light: #ffffff;
+  --font-main: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-padding {
+  padding: 80px 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hidden-mobile {
+    display: block;
+  }
+}

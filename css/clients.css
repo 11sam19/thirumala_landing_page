@@ -1,0 +1,95 @@
+/* ========================================
+   CLIENTS SECTION - RESPONSIVE
+   ======================================== */
+#clients {
+    background: #fff;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    #clients {
+        padding: 50px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #clients {
+        padding: 60px 0;
+    }
+}
+
+#clients .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.clients-scroll {
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .clients-scroll {
+        width: 90%;
+    }
+}
+
+@media (min-width: 992px) {
+    .clients-scroll {
+        width: 85%;
+    }
+}
+
+.client-track {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    animation: scroll 20s linear infinite;
+    width: max-content;
+}
+
+@media (min-width: 768px) {
+    .client-track {
+        gap: 60px;
+    }
+}
+
+@media (min-width: 992px) {
+    .client-track {
+        gap: 80px;
+    }
+}
+
+.client-track img {
+    height: 30px;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+@media (min-width: 768px) {
+    .client-track img {
+        height: 35px;
+    }
+}
+
+@media (min-width: 992px) {
+    .client-track img {
+        height: 40px;
+    }
+}
+
+.client-track img:hover {
+    opacity: 1;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

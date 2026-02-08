@@ -1,0 +1,359 @@
+/* ========================================
+   QUOTE FORM SECTION (DESKTOP BASE)
+   ======================================== */
+
+#quote-form {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0;
+  font-family: 'Inter', sans-serif;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  #quote-form { padding: 70px 0; }
+}
+
+@media (min-width: 992px) {
+  #quote-form { padding: 80px 0; }
+}
+
+/* ================= HEADER ================= */
+
+.quote-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .quote-header { margin-bottom: 50px; }
+}
+
+@media (min-width: 992px) {
+  .quote-header { margin-bottom: 60px; }
+}
+
+/* ================= RADIO ================= */
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .form-label {
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-label {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+}
+
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .radio-group { gap: 30px; }
+}
+
+@media (min-width: 992px) {
+  .radio-group { gap: 40px; }
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .radio-item {
+    gap: 12px;
+    font-size: 14px;
+  }
+}
+
+.radio-item input {
+  display: none;
+}
+
+.radio-custom {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media (min-width: 992px) {
+  .radio-custom {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.radio-item input:checked + .radio-custom {
+  border-color: #ff5200;
+}
+
+.radio-item input:checked + .radio-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #ff5200;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 82, 0, 0.5);
+}
+
+@media (min-width: 992px) {
+  .radio-item input:checked + .radio-custom::after {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ================= LAYOUT ================= */
+
+.quote-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .quote-wrapper {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .quote-wrapper { gap: 100px; }
+}
+
+/* ================= LEFT INFO ================= */
+
+#quote-form .section-badge {
+  background: rgba(255, 82, 0, 0.1);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #ff5200;
+  border-radius: 50%;
+}
+
+.quote-title {
+  font-size: 32px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .quote-title {
+    font-size: 40px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .quote-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+}
+
+.quote-desc {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .quote-desc {
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .quote-desc {
+    font-size: 16px;
+    margin-bottom: 80px;
+  }
+}
+
+/* ================= CONTACT BOX ================= */
+
+.quote-contact-box {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .quote-contact-box {
+    padding: 30px;
+    max-width: 300px;
+  }
+}
+
+/* ================= FORM ================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(to right, #ff4e00, #fd7e14);
+  border: none;
+  padding: 16px;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ========================================
+   RESPONSIVE FIXES (TABLET + MOBILE ONLY)
+   ======================================== */
+
+/* -------- TABLET -------- */
+@media (max-width: 991px) {
+
+  .quote-wrapper {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .quote-title {
+    font-size: 36px;
+  }
+
+  .quote-desc {
+    margin-bottom: 48px;
+  }
+
+  .radio-group {
+    justify-content: flex-start;
+  }
+
+  .quote-contact-box {
+    max-width: 100%;
+  }
+}
+
+/* -------- MOBILE -------- */
+@media (max-width: 767px) {
+
+  #quote-form {
+    padding: 60px 20px;
+  }
+
+  .quote-header {
+    margin-bottom: 36px;
+  }
+
+  .quote-title {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .quote-desc {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .form-label {
+    text-align: left;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
+
+/* -------- SMALL PHONES -------- */
+@media (max-width: 480px) {
+
+  .quote-title {
+    font-size: 24px;
+  }
+
+  .quote-desc {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,158 @@
+
+#header-section {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 30px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Logo Box */
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98px;
+    height: 68px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1.5px solid rgba(254, 82, 0, 0.3);
+}
+
+.logo-text {
+    color: var(--primary-orange);
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+
+/* Desktop Nav Pill */
+.main-nav {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 26px;
+    padding: 10px 30px;
+    border: 1px solid rgba(254, 82, 0, 0.2);
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-item { position: relative; padding: 10px 0; }
+
+.nav-item a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    transition: 0.3s;
+}
+
+.nav-item.active a { color: #fff; }
+
+.nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+}
+
+/* Desktop Button */
+.header-cta {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.btn-contact {
+    display: block;
+    background: var(--primary-orange);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 14px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    box-shadow: inset 0px -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger Styles */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative; 
+    z-index: 2000; /* Ensure this is the highest element */
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* X Animation */
+.hamburger.is-active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.is-active span:nth-child(2) { opacity: 0; }
+.hamburger.is-active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98); 
+    z-index: 1500; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+}
+
+.mobile-menu.active { right: 0; }
+
+.mobile-nav-list { list-style: none; text-align: center; }
+.mobile-nav-list li { margin: 25px 0; }
+.mobile-nav-list a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.mobile-cta { color: var(--primary-orange) !important; font-weight: bold; }
+
+/* Responsive Media Queries */
+@media (max-width: 991px) {
+    .main-nav, .header-cta { display: none; }
+    .hamburger { display: flex; }
+}

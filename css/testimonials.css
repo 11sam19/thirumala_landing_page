@@ -1,0 +1,225 @@
+/* ========================================
+   TESTIMONIALS SECTION
+   ======================================== */
+#testimonials {
+    background-color: #fff;
+    position: relative;
+    padding: 80px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Header */
+.testi-header {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Grid */
+.testi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+    max-width: 886px;
+}
+
+/* Desktop grid */
+@media (min-width: 768px) {
+    .testi-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        height: 600px;
+    }
+}
+
+/* ========================================
+   COLUMNS
+   ======================================== */
+.testi-col {
+    position: relative;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.testi-col::-webkit-scrollbar {
+    display: none;
+}
+
+/* ========================================
+   MOBILE AUTO CAROUSEL (UPWARD)
+   ======================================== */
+@media (max-width: 767px) {
+    .testi-col {
+        height: 520px;
+        overflow: hidden;
+    }
+
+    .testi-col-inner {
+        animation: mobileScrollUp 25s linear infinite;
+    }
+
+    .testi-col:hover .testi-col-inner {
+        animation-play-state: paused;
+    }
+}
+
+/* ========================================
+   DESKTOP AUTO SCROLL
+   ======================================== */
+@media (min-width: 768px) {
+    .testi-col {
+        overflow: hidden;
+        max-height: 700px;
+    }
+
+    .testi-col:nth-child(1) .testi-col-inner {
+        animation: scrollUp 30s linear infinite;
+    }
+
+    .testi-col:nth-child(2) .testi-col-inner {
+        animation: scrollDown 35s linear infinite;
+    }
+
+    .testi-col:hover .testi-col-inner {
+        animation-play-state: paused;
+    }
+}
+
+/* Inner Stack */
+.testi-col-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes scrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+}
+
+/* Mobile carousel animation */
+@keyframes mobileScrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-60%); }
+}
+
+/* ========================================
+   FADE OVERLAYS
+   ======================================== */
+@media (min-width: 768px) {
+    .testi-col::before,
+    .testi-col::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 120px;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .testi-col::before {
+        top: 0;
+        background: linear-gradient(to bottom, #fff 0%, rgba(255,255,255,0) 100%);
+    }
+
+    .testi-col::after {
+        bottom: 0;
+        background: linear-gradient(to top, #fff 0%, rgba(255,255,255,0) 100%);
+    }
+}
+
+/* ========================================
+   CARD
+   ======================================== */
+.testi-card {
+    background: rgba(255, 243, 237, 0.2);
+    border: 1px solid rgba(255, 94, 0, 0.15);
+    padding: 16px;
+    border-radius: 16px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 427px;
+    min-height: 336px;
+    transition: transform 0.3s ease;
+}
+
+/* Desktop fixed size */
+@media (min-width: 768px) {
+    .testi-card {
+        width: 427px;
+        height: 336px;
+    }
+}
+
+/* Quote */
+.quote-mark {
+    font-size: 50px;
+    color: #ff671f;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: serif;
+}
+
+/* Title */
+.testi-title {
+    color: #2E2E2E;
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+}
+
+/* Text */
+.testi-text {
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 24px;
+    font-family: Poppins;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+/* Author */
+.testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    object-fit: cover;
+}
+
+.author-name {
+    color: #2E2E2E;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.author-role {
+    color: rgba(46, 46, 46, 0.4);
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 12px;
+}

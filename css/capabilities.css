@@ -1,0 +1,276 @@
+/* ========================================
+   CAPABILITIES SECTION - RESPONSIVE
+   ======================================== */
+#capabilities {
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.cap-header {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .cap-header {
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cap-header {
+        margin-bottom: 60px;
+    }
+}
+
+.cap-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1249px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .cap-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cap-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+.cap-card {
+    position: relative;
+    width: 100%;
+    min-height: clamp(320px, 40vw, 500px);
+    border-radius: clamp(16px, 2.5vw, 36px);
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cap-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.6s ease;
+}
+
+.cap-card:hover .cap-bg {
+    transform: scale(1.12);
+}
+
+.cap-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 25%,
+        rgba(0, 0, 0, 0.45) 60%,
+        transparent
+    );
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.cap-content {
+    position: relative;
+    z-index: 3;
+    padding: clamp(16px, 3vw, 28px);
+    color: #fff;
+    width: 100%;
+}
+
+.cap-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(20px, 3.4vw, 32px);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+}
+
+
+.cap-description {
+    max-height: 52px;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.3s ease;
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: clamp(12px, 2.2vw, 14px);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+    .cap-description {
+        margin-bottom: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cap-description {
+        margin-bottom: 20px;
+    }
+}
+
+.cap-card:hover .cap-description {
+    max-height: 420px;
+}
+
+.short-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 992px) {
+    .short-text {
+        font-size: 14px;
+    }
+}
+
+.read-more {
+    font-weight: 700;
+    color: #fff;
+    margin-left: 6px;
+}
+
+.full-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (min-width: 992px) {
+    .full-text {
+        font-size: 14px;
+    }
+}
+
+.cap-card:hover .full-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cap-card:hover .short-text {
+    display: none;
+}
+
+.cap-link {
+    display: block;
+    text-align: center;
+    background: linear-gradient(to bottom, #883302, #fe5200);
+    padding: 14px;
+    border-radius: 16px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+    .cap-link {
+        padding: 15px;
+        border-radius: 18px;
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cap-link {
+        border-radius: 20px;
+        font-size: 18px;
+    }
+}
+
+.cap-link:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== Mobile / Touch tweaks ===== */
+@media (max-width: 767px) {
+    .cap-card {
+        min-height: auto;
+        height: auto;
+        border-radius: 18px;
+        display: block;
+        align-items: stretch;
+    }
+
+    .cap-bg {
+        height: 220px;
+    }
+
+    .cap-overlay {
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85) 35%,
+            rgba(0, 0, 0, 0.35) 65%,
+            transparent
+        );
+    }
+
+    .cap-description {
+        max-height: none;
+        overflow: visible;
+        margin-bottom: 12px;
+    }
+
+    .full-text {
+        opacity: 1;
+        transform: none;
+    }
+
+    .short-text {
+        display: none;
+    }
+
+    .cap-link {
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cap-content {
+        padding: 12px 14px;
+    }
+
+    .cap-content h3 {
+        font-size: clamp(18px, 5.5vw, 22px);
+    }
+
+    .cap-bg {
+        height: 180px;
+    }
+
+    .badge, .cap-link {
+        font-size: 14px;
+    }
+}
